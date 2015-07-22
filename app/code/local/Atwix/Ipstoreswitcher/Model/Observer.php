@@ -33,10 +33,10 @@ class Atwix_Ipstoreswitcher_Model_Observer
             $geoIPCountry = Mage::getSingleton('geoip/country');
             $countryCode = $geoIPCountry->getCountry();
             if ($countryCode) {
-                $storeName = Mage::helper('atwix_ipstoreswitcher')->getStoreByCountry($countryCode);
-                if ($storeName) {
-                    $store = Mage::getModel('core/store')->load($storeName, 'name');
-                    if ($store->getName() != Mage::app()->getStore()->getName()) {
+                $storeCode = Mage::helper('atwix_ipstoreswitcher')->getStoreCodeByCountry($countryCode);
+                if ($storeCode) {
+                    $store = Mage::getModel('core/store')->load($storeCode, 'code');
+                    if ($store->getCode() != Mage::app()->getStore()->getCode()) {
                         $event->getControllerAction()->getResponse()->setRedirect($store->getCurrentUrl(false));
                     }
                 }

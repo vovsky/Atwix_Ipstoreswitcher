@@ -21,36 +21,37 @@
 /* app/code/local/Atwix/Ipstoreswitcher/Helper/Data.php */
 class Atwix_Ipstoreswitcher_Helper_Data extends Mage_Core_Helper_Abstract
 {
-    const DEFAULT_STORE = 'English';
+    const DEFAULT_STORE_CODE = 'default';
 
     /**
      * countries to store relation
-     * default is English
+     * default is default
      * @var array
      */
-    protected $_countryToStore = array(
-        'FR' => 'French',
-        'BE' => 'French',
-        'CH' => 'French',
-        'DE' => 'German',
-        'AT' => 'German',
-        'UK' => 'English',
-        'US' => 'English',
-        'UA' => 'English',
-        'CN' => 'English',
-        'JP' => 'English'
+    protected $_countryToStoreCode = array(
+        'FR' => 'french',
+        'BE' => 'french',
+        'CH' => 'french',
+        'DE' => 'german',
+        'AT' => 'german',
+        'UK' => 'default',
+        'US' => 'default',
+        'UA' => 'default',
+        'CN' => 'default',
+        'JP' => 'default',
+	'US' => 'usa_store_view'
     );
 
     /**
-     * get store view name by country
+     * get store view code by country
      * @param $country
      * @return bool
      */
-    public function getStoreByCountry($country)
+    public function getStoreCodeByCountry($country)
     {
-        if (isset($this->_countryToStore[$country])) {
-            return $this->_countryToStore[$country];
+        if (isset($this->_countryToStoreCode[$country])) {
+            return $this->_countryToStoreCode[$country];
         }
-        return self::DEFAULT_STORE;
+        return self::DEFAULT_STORE_CODE;
     }
 }
