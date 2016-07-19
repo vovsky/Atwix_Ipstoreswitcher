@@ -25,7 +25,9 @@
         <Atwix_Ipstoreswitcher>
             <active>true</active>
             <codePool>local</codePool>
-            <depends>Sandfox_GeoIP</depends>
+            <depends>
+                <Sandfox_GeoIP/>
+            </depends>
         </Atwix_Ipstoreswitcher>
     </modules>
 </config>
