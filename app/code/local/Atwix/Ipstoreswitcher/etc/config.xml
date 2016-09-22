@@ -41,14 +41,14 @@
     </global>
     <frontend>
         <events>
-            <controller_action_postdispatch>
+            <controller_action_predispatch>
                 <observers>
                     <atwix_ipstoreswitcher>
                         <class>atwix_ipstoreswitcher/observer</class>
-                        <method>controllerActionPostdispatch</method>
+                        <method>controllerActionPredispatch</method>
                     </atwix_ipstoreswitcher>
                 </observers>
-            </controller_action_postdispatch>
+            </controller_action_predispatch>
         </events>
     </frontend>
 </config>
