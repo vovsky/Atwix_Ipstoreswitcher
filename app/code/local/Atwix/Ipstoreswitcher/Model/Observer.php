@@ -26,7 +26,7 @@ class Atwix_Ipstoreswitcher_Model_Observer
      * redirects customer to store view based on GeoIP
      * @param $event
      */
-    public function controllerActionPostdispatch($event)
+    public function controllerActionPredispatch($event)
     {
         $cookie = Mage::getSingleton('core/cookie');
         if ($cookie->get('geoip_processed') != 1) {
